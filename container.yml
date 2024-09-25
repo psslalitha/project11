@@ -1,0 +1,29 @@
+- name: Pull Docker images and run containers
+  hosts: sn
+  become: true
+  tasks:
+    - name: Pull SonarQube image
+      docker_image:
+        name: sonarqube
+        source: pull
+
+    - name: Pull Nexus image
+      docker_image:
+        name: sonatype/nexus3
+        source: pull
+
+    - name: Run SonarQube container
+      docker_container:
+        name: sonarqube_container
+        image: sonarqube
+        state: started
+        ports:
+          - "9000:9000"  # Exposing SonarQube on port 9000
+
+    - name: Run Nexus container
+      docker_container:
+        name: nexus_container
+        image: sonatype/nexus3
+        state: started
+        ports:
+          - "8081:8081"  # Exposing Nexus on port 8081
