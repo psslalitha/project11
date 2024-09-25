@@ -1,0 +1,71 @@
+ 1  sudo su
+    2  ssh-keygen -t rsa
+    3  cat /home/ubuntu/.ssh/id_rsa.pub
+    4  sudo su
+    5  cat /home/ubuntu/.ssh/id_rsa.pub
+    6  sudo vi /etc/ansible/hosts
+    7  ssh ubuntu@10.0.0.0135
+    8  ssh ubuntu@10.0.0.135
+    9  ansible all -m ping
+   10  vi docker_install.yml
+   11  vi scriptd.sh
+   12  vi docker_install.yml
+   13  ansible-playbook.yml docker_install.yml --syntax-check
+   14  ansible-playbook docker_install.yml --syntax-check
+   15  vi docker_install.yml
+   16  ansible-playbook docker_install.yml --syntax-check
+   17  ansible-playbook docker_install.yml
+   18  ansible all -m command -a 'docker --version' -b
+   19  vi nano container.yml
+   20  ls
+   21  rm -f nano 1
+   22  ls
+   23  vi container.yml
+   24  ansible-playbook container.yml --syntax-check
+   25  ansible-playbook container.yml
+   26  vi container.yml
+   27  ansible-playbook container.yml
+   28  vi container.yml
+   29  ansible-playbook container.yml
+   30  vi container.yml
+   31  ansible-playbook container.yml
+   32  ansible sn -m command -a 'docker ps -a -q' -b
+   33  ansible sn -m command -a 'docker images' -b
+   34  vi container.yml
+   35  ls
+   36  vi docker_install.yml
+   37  vi container.yml
+   38  vi docker_install.yml
+   39  vi container.yml
+   40  ls
+   41  vi docker_install.yml
+   42  vi /etc/ansible/hosts
+   43  vi scriptd.sh
+   44  vi docker_install.yml
+   45  ls
+   46  vi con
+   47  ls
+   48  vi container.yml
+   49  ansible-playbook container.yml
+   50  ansible sn -m command -a 'docker ps -a ' -b
+   51  ansible-playbook container.yml
+   52  vi container.yml
+   53  ansible-playbook container.yml
+   54  ls
+   55  vi container.yml
+   56  vi kube.yml
+   57  scriptk.sh
+   58  vi scriptk.sh
+   59  ansible-playbook kube.yml
+   60  vi kube.yml
+   61  ansible-playbook kube.yml --syntax-check
+   62  vi kube.yml
+   63  ansible-playbook kube.yml --syntax-check
+   64  ansible-playbook kube.yml
+   65  ls
+   66  ansible-playbook container.yml
+   67  ansible sn -m command -a 'docker ps -a'
+   68  ansible sn -m command -a 'docker ps -a' -b
+   
+   70  ansible sn -m command -a 'docker exec nexus_container cat /nexus-data/admin.password' -b
+   71  history
