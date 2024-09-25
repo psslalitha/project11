@@ -1,0 +1,23 @@
+- name: Install Docker and Python3
+  hosts: sn
+  become: true
+  tasks:
+    - name: Copy the Docker installation script to the remote machine
+      copy:
+        src: scriptd.sh
+        dest: /home/ubuntu/scriptd.sh
+        mode: '0755'  # Make it executable if necessary
+
+    - name: Run the Docker installation script
+      shell: /home/ubuntu/scriptd.sh
+
+    - name: Install Python3 and pip
+      apt:
+        name:
+          - python3
+          - python3-pip
+        state: present
+        update_cache: yes
+
+    - name: Install Docker Python module
+      shell: pip install docker-py
