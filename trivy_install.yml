@@ -1,0 +1,12 @@
+---
+- name : to install trivy on target nodes
+  hosts : jen
+  become : true
+  tasks :
+    - name : to copy the script from acm to jenkins server
+      copy :
+        src : scriptt.sh
+        dest : /home/ubuntu/scriptt.sh
+        mode : "0755"
+    - name : to run the script on target node
+      shell : /home/ubuntu/scriptt.sh
