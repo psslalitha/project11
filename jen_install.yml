@@ -1,0 +1,13 @@
+---
+- name : to install jenkins on target node
+  hosts : jen
+  become : true
+  tasks :
+    - name : to copy the jenkins script from acm to jenkins script
+      copy :
+        src : scriptj.sh
+        dest : /home/ubuntu/scriptj.sh
+        mode : "0755"
+
+    - name : to run the script
+      shell : /home/ubuntu/scriptj.sh
