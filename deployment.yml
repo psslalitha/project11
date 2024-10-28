@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project
+  labels:
+    app: pro
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: pro
+  template:
+    metadata:
+      labels:
+        app: pro
+    spec:
+      containers:
+        - name: pc
+          image: srilalithac/devops:1.0.4
+          ports:
+          - containerPort: 8080
